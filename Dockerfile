@@ -50,6 +50,9 @@ RUN chown -R www-data:www-data /var/www/html \
 ENV PORT=8000
 EXPOSE $PORT
 
+# Supprimer le .env du repo pour forcer l'utilisation des variables Render
+RUN rm -f /var/www/html/.env
+
 # Start command: This will prepare Laravel (caching, migrations) and start Apache
 CMD php artisan config:clear \
     && php artisan config:cache \
