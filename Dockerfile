@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libpq-dev \
+    libicu-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install required PHP extensions (including PDO PostgreSQL for Render DB)
